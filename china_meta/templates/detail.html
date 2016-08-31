@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row" id="detail_div_1">
+    <div class="col-xs-4">
+      <img class="img-responsive" src="/item_images/{{ item.image }}"/>
+    </div>
+    <div class="col-xs-8">
+      <div>
+        <h6>[{{ item.brand }}]</h6>
+        <h5>{{ item.title }}</h5>
+      </div>
+      <div>
+        <div>价格</div>
+        <div>¥{{item.get_min_price}}- ¥{{item.get_max_price}}</div>
+      </div>
+      <div>
+        <div>比较</div>
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>主页名</th>
+                <th>价格</th>
+                <th>直接跳过</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for link in links%}
+              <tr>
+                <td>{{link.source_name}}</td>
+                <td>¥ {{link.price}}</td>
+                <td><a href="{{link.source_url}}"><i class="fa fa-caret-right mint font20" aria-hidden="true"></i></a></td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div> 
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row" id="detail_div_2">
+    <div class="col-xs-12">
+
+      <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-pills nav-justified" role="tablist" id="detail_tabs">
+          <li role="presentation" class="active"><a href="#explain" aria-controls="home" role="tab" data-toggle="tab">商品信息</a></li>
+          <li role="presentation"><a href="#review" aria-controls="profile" role="tab" data-toggle="tab">评价 (10)</a></li>
+          <li role="presentation"><a href="#relation" aria-controls="messages" role="tab" data-toggle="tab">同类商品</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="explain">{{ item.detail }}</div>
+          <div role="tabpanel" class="tab-pane" id="review">평가들...</div>
+          <div role="tabpanel" class="tab-pane" id="relation">관련상품들</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

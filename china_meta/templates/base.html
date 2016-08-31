@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>meta shopping</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'bs3/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+    <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+    <script src="{% static 'js/jssor.slider-21.1.5.min.js' %}"></script>
+    <script src="{% static 'bs3/js/bootstrap.min.js' %}"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+  <div id="gnb">
+    <div class="container">
+      <div class="row">
+        <div class="pull-left">
+          <ul class="gnb_ul">
+            <li class="gnb_li"><a class="gnb_a">首页</a></li>
+          </ul>
+        </div>
+        <div class="pull-right">
+          <ul class="gnb_ul">
+            <li class="gnb_li"><a class="gnb_a">登录</a></li>
+            <li class="gnb_li"><a class="gnb_a">注册会员</a></li>
+            <li class="gnb_li"><a class="gnb_a"><span class="glyphicon glyphicon-shopping-cart" id="span_cart" aria-hidden="true"></span>&nbsp;购物车</a></li>
+            <li class="gnb_li"><a class="gnb_a">客服中心</a></li>
+            <li class="gnb_li"><a class="gnb_a">网站导航</a></li>
+          </ul>         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="nav">
+    <div class="container">
+      <div class="col-xs-6 col-xs-offset-3" id="search_form_div">
+      <form class="form-inline" id="search_form" method="GET" action="{% url 'search' %}">
+        <div class="form-group" id="search_form_form_group">
+          <div class="input-group" id="search_form_input_group">
+            <input type="text" class="form-control" name="q">
+            <div class="input-group-addon" id="search_form_input_addon" onclick="$('#search_form').submit();">搜索</div>
+          </div>
+        </div>
+      </form>
+      </div>
+      <div class="col-xs-3" id="nav_slide_div">
+        <div id="jssor_0">
+        </div>
+
+        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 160px; height: 30px; overflow: hidden; visibility: hidden;">
+            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 160px; height: 30px; overflow: hidden;">
+                <div data-p="112.50" style="display: none;">
+                  &nbsp;
+                  <div class="ranking">1</div>
+                  <div class="ranking_content">韩国化妆品</div>
+                  <div class="ranking_down"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  &nbsp;
+                  <div class="ranking">2</div>
+                  <div class="ranking_content">韩国化妆品</div>
+                  <div class="ranking_down"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  &nbsp;
+                  <div class="ranking">3</div>
+                  <div class="ranking_content">韩国化妆品</div>
+                  <div class="ranking_down"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></div>
+                </div>
+            </div>
+            <!-- Arrow Navigator -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="nav_bottom">
+    <div class="container">
+      <div class="pull-left" id="nav_bottom_div">
+        <a id="nav_bottom_a">
+        <span class="glyphicon glyphicon-menu-hamburger" id="nav_bottom_a_1" aria-hidden="true"></span>
+        全部分类
+        <span class="glyphicon glyphicon-triangle-bottom" id="nav_bottom_a_2" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="nav_bottom_right_div">
+        <ul id="nav_bottom_right_ul">
+          <li><a>服装</a></li>
+          <li><a>配饰</a></li>
+          <li><a>美妆</a></li>
+          <li><a>电器</a></li>
+          <li><a>家具</a></li>
+          <li><a>健康</a></li>
+          <li><a>婴儿</a></li>
+          <li><a>韩国特色</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <script>
+        jQuery(document).ready(function ($) {
+            
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $DragOrientation: 2,
+              $PlayOrientation: 2,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 600);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+
+ 
+
+
+    {% block content %}{% endblock %}
+
+    <div id="footer">
+      <div class="container">
+        <h3>회사로고</h3>
+        <p>전화 : 1111-2222</p>
+        <p>주소 : 서울 강남구 방배로 110, 5층</p>
+      </div>
+    </div>
+
+  </body>
+</html>

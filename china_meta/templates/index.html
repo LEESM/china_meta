@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="index_slide">
+	<div class="container">
+		<div class="row">
+			<img class="img-responsive" src="{% static 'img/main_banner.jpeg' %}">
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+
+	<div class="row">
+		<div class="main_header">
+			<div class="main_header_hr">
+				<hr/>
+			</div>
+			<div class="main_header_text">
+				推荐产品
+			</div>
+			<div class="main_header_hr">
+				<hr/>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		{% for item in items1 %}
+    	<a href="{% url 'detail' %}?title={{item.title}}">
+			<div class="col-xs-3 main_item_div">
+				<div class="main_item_img_div">
+					<img class="img-responsive" src="/item_images/{{ item.image }}">
+				</div>
+				<div class="main_item_text_div">
+					[{{ item.brand }}] {{ item.title|truncatechars:18  }}
+				</div>
+			</div>
+		</a>
+		{% endfor %}
+	</div>
+
+	<div class="row">
+		<div class="main_header">
+			<div class="main_header_hr">
+				<hr/>
+			</div>
+			<div class="main_header_text">
+				畅销产品
+			</div>
+			<div class="main_header_hr">
+				<hr/>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		{% for item in items2 %}
+    	<a href="{% url 'detail' %}?title={{item.title}}">
+			<div class="col-xs-3 main_item_div">
+				<div class="main_item_img_div">
+					<img class="img-responsive" src="/item_images/{{ item.image }}">
+				</div>
+				<div class="main_item_text_div">
+					[{{ item.brand }}] {{ item.title|truncatechars:18  }}
+				</div>
+			</div>
+		</a>
+		{% endfor %}
+	</div>
+
+</div>
+
+{% endblock %}

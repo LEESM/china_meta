@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<h3>“{{q}}” 有相关的结果 : 高级搜索</h3>
+
+  <div class="row">
+    {% for item in items %}
+    <a href="{% url 'detail' %}?title={{item.title}}">
+      <div class="col-xs-3 main_item_div">
+
+        <div class="main_item_img_div">
+          <img class="img-responsive" src="/item_images/{{ item.image }}">
+        </div>
+        
+        <div class="main_item_text_div">
+
+          <div class="main_item_text_title">
+            [{{ item.brand }}] {{ item.title|truncatechars:18  }}
+          </div>
+
+          <div class="main_item_text_price">
+            ¥ {{ item.get_min_price }} - ¥ {{ item.get_max_price }}
+          </div>
+
+          <div class="main_item_text_review">
+            <div class="pull-left search_star">
+              <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star no-score" aria-hidden="true"></i>
+            </div> 
+            <div class="pull-right">
+              <p>评价（157) </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% endblock %}
