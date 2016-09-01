@@ -1,3 +1,9 @@
+body{
+	min-width:1200px;
+}
+.container{
+	min-width:1170px !important;
+}
 .mint{
 	color:rgb(68,189,161);
 }
@@ -145,12 +151,12 @@
 	padding-bottom:20px;
 }
 .main_item_div{
-	margin-top:20px;
+	margin-top:30px;
 }
 .main_item_img_div{
-border-top:1px solid rgb(241,241,241);
-border-left:1px solid rgb(241,241,241);
-border-right:1px solid rgb(241,241,241);
+	border-top:1px solid rgb(241,241,241);
+	border-left:1px solid rgb(241,241,241);
+	border-right:1px solid rgb(241,241,241);
 }
 .main_item_text_div{
 	padding:10px 10px;
@@ -211,5 +217,179 @@ margin-top:70px;
 }
 
 
+#detail_div_1_right_top{
+	border-bottom:1px solid rgb(229,229,229);
+}
+#detail_div_1_right_middle{
+	height:90px;
+}
+#detail_div_1_right_bottom{
+
+}
+
+#detail_brand{
+	font-size:16px;
+	color:rgb(95,95,95);
+}
+#detail_title{
+	color:rgb(95,95,95);
+	font-size:25px;
+	font-weight:bold;
+}
+
+.detail_div_1_right_head_div{
+	display:inline-block;
+	width:13%;
+	font-size:20px;
+	color:rgb(95,95,95);
+}
+.detail_div_1_right_body_div{
+	display:inline-block;
+	width:86%;
+
+}
+#detail_price{
+	font-size:40px;
+	color:rgb(68,189,161);
+}
+#detail_comparison_head{
+	vertical-align: top;
+}
+#detail_comparison_table{
+	border:1px solid rgb(68,189,161);
+}
+#detail_comparison_table tr th{
+	background-color:rgb(238,238,238);
+	border:none;
+}
+#detail_comparison_table td{
+	border:none;
+}
+.detail_td2, .detail_td3{
+	width:130px;
+}
+.detail_td1, .detail_td2, .detail_td3{
+font-size:20px;
+}
+
+#explain table{
+	width:980px;
+	margin:0 auto;
+}
+#explain table tbody tr:first-child{
+	border-top:2px solid rgb(38,38,38);
+}
+#explain table tr td:first-child{
+background-color: rgb(247,247,247);
+width:240px;
+padding-left:20px;
+}
+#explain, #review, #relation{
+	min-height:500px;
+}
 
 
+#accounts_div{
+	height:600px;
+	background-color:rgb(85,111,181);
+	padding-top:50px;
+	padding-bottom:50px;
+}
+#signup_inner_div{
+	height:100%;
+	background-color: rgb(238,241,248);
+	width:1000px;
+	margin:0 auto;
+}
+
+
+.signup_addon{
+	width:120px;
+	height:50px;
+	font-size:24px;
+}
+
+#signup_addon1{
+	padding-right: 40px;
+}
+
+#signup_form_email, #id_password1, #id_password2{
+	width:300px;
+	height:50px;
+	font-size:24px;
+}
+
+#signup_checkbox_div{
+	font-size:24px;
+	padding-left:290px;
+}
+#agreement_label{
+	color:rgb(68,189,161);
+}
+
+#signup_submit{
+	width:420px;
+	height:50px;
+	line-height:50px;
+	padding:0;
+	font-size:30px;
+	background-color:rgb(68,189,161);
+	color:white;
+	border:none;
+}
+#signup_inner_left_div,#signup_inner_right_div{
+	padding:40px;
+}
+
+#signup_agreement_textarea{
+	width:100%;
+	height:350px;
+}
+
+#login_div{
+	background-color:rgb(238,241,248);
+	height:500px;
+	padding:40px;
+}
+
+.login_addon{
+	width:120px;
+	height:50px;
+	font-size:24px;
+	background-color: rgb(191,191,191);
+	color:white;
+}
+#login_user_icon{
+	margin:0 3px;
+}
+#login_pw_icon{
+	margin:0 4.5px;
+}
+#id_username, #id_password{
+	width:450px;
+	height:50px;
+	font-size:24px;
+}
+#login_submit{
+	width:100%;
+	height:50px;
+	line-height:50px;
+	color:white;
+	font-size:30px;
+	padding:0;
+	background-color:rgb(68,189,161);
+}
+#login_checkbox_left label{
+	font-size:18px;
+}
+#login_checkbox_right{
+	margin:10px 0;
+	font-size:18px;
+}
+#signup_btn{
+	font-size:24px;
+}
+#signup_btn_i{
+	font-size:30px;
+	font-weight:bold;
+}

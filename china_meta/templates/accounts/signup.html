@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="accounts_div">
+	<div id="signup_inner_div">
+		<div class="row">
+			<div class="col-xs-6" id="signup_inner_left_div">
+				<h3>注册</h3>
+				<form method="POST" action="{% url 'signup' %}" id="signup_form">
+					{% csrf_token %}
+					{{userform.username}}
+				    <div class="input-group">
+				      <div class="input-group-addon signup_addon"><span id="signup_addon1">邮</span>箱</div>
+						{{userform.email}}
+				    </div>
+					<p class="help-block">&nbsp;</p>
+					{{ userform.email.errors|striptags }}
+
+				    <div class="input-group">
+					      <div class="input-group-addon signup_addon">设置密码</div>
+					      <input class="form-control" id="id_password1" name="password1" type="password" required="">
+				    </div>
+					<p class="help-block"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 建议使用6-20个字母、数字和符号两种字符组合</p>
+				    {{ userform.password1.errors|striptags }}
+				    
+					
+				    <div class="input-group">
+					      <div class="input-group-addon signup_addon">确认密码</div>
+					      <input class="form-control" id="id_password2" name="password2" type="password" required="">
+				    </div>
+					<p class="help-block"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 请你再一次输入密码</p>
+					{{ userform.password2.errors|striptags }}
+					  <div class="checkbox" id="signup_checkbox_div">
+					    <label>
+					      <input type="checkbox">同意<span id="agreement_label">条款 <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+					    </label>
+					  </div>
+				</form>
+				<a class="btn btn-lg btn-primary" id="signup_submit">注册协议</a>
+			</div>
+			<div class="col-xs-6" id="signup_inner_right_div">
+				<h3>注册</h3>
+				<textarea id="signup_agreement_textarea">
+特别提示：
+您在使用百度提供的各项服务之前，请您务必审慎阅读、充分理解本协议各条款内容，特别是以粗体标注的部分，包括但不限于免除或者限制责任的条款。如您不同意本服务协议及/或随时对其的修改，您可以主动停止使用百度提供的服务；您一旦使用百度服务，即视为您已了解并完全同意本服务协议各项内容，包括百度对服务协议随时所做的任何修改，并成为百度用户。
+一、总则
+1．1　用户应当同意本协议的条款并按照页面上的提示完成全部的注册程序。用户在进行注册程序过程中点击"同意"按钮即表示用户与百度公司达成协议，完全接受本协议项下的全部条款。
+1．2　用户注册成功后，百度将给予每个用户一个用户帐号及相应的密码，该用户帐号和密码由用户负责保管；用户应当对以其用户帐号进行的所有活动和事件负法律责任。
+1．3　用户一经注册百度帐号，除非子频道要求单独开通权限，用户有权利用该账号使用百度各个频道的单项服务，当用户使用百度各单项服务时，用户的使用行为视为其对该单项服务的服务条款以及百度在该单项服务中发出的各类公告的同意。
+				</textarea>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$(function() {
+	$("#signup_submit").click(function() {
+		$("#signup_form_username").val($("#signup_form_email").val());
+		$("#signup_form").submit();
+	});
+});	
+
+</script>
+{% endblock %}

@@ -9,18 +9,21 @@
       <img class="img-responsive" src="/item_images/{{ item.image }}"/>
     </div>
     <div class="col-xs-8">
-      <div>
-        <h6>[{{ item.brand }}]</h6>
-        <h5>{{ item.title }}</h5>
+      <div id="detail_div_1_right_top">
+        <h6 id="detail_brand">[{{ item.brand }}]</h6>
+        <h5 id="detail_title">{{ item.title }}</h5>
       </div>
-      <div>
-        <div>价格</div>
-        <div>¥{{item.get_min_price}}- ¥{{item.get_max_price}}</div>
+      <div id="detail_div_1_right_middle">
+        <div class="detail_div_1_right_head_div">价格</div>
+        <div class="detail_div_1_right_body_div" id="detail_price">
+          ¥ {{item.get_min_price}} - ¥ {{item.get_max_price}}
+          <span></span>
+        </div>
       </div>
-      <div>
-        <div>比较</div>
-        <div>
-          <table class="table">
+      <div id="detail_div_1_right_bottom">
+        <div class="detail_div_1_right_head_div" id="detail_comparison_head">比较</div>
+        <div class="detail_div_1_right_body_div">
+          <table class="table" id="detail_comparison_table">
             <thead>
               <tr>
                 <th>主页名</th>
@@ -31,9 +34,9 @@
             <tbody>
             {% for link in links%}
               <tr>
-                <td>{{link.source_name}}</td>
-                <td>¥ {{link.price}}</td>
-                <td><a href="{{link.source_url}}"><i class="fa fa-caret-right mint font20" aria-hidden="true"></i></a></td>
+                <td class="detail_td1">{{link.source_name}}</td>
+                <td class="detail_td2">¥ {{link.price}}</td>
+                <td class="text-center detail_td3"><a href="{{link.source_url}}"><i class="fa fa-arrow-right mint font20" aria-hidden="true"></i></a></td>
               </tr>
             {% endfor %}
             </tbody>
@@ -59,7 +62,7 @@
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="explain">{{ item.detail }}</div>
+          <div role="tabpanel" class="tab-pane active" id="explain">{{ item.detail|safe }}</div>
           <div role="tabpanel" class="tab-pane" id="review">평가들...</div>
           <div role="tabpanel" class="tab-pane" id="relation">관련상품들</div>
         </div>

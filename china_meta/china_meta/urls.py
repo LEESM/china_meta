@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^search/', search, name='search'),
     url(r'^detail/', detail, name='detail'),
+    url(r'^accounts/', include('accounts.urls')),
     url(r'^summernote/', include('django_summernote.urls')),
 ]
 if settings.DEBUG:

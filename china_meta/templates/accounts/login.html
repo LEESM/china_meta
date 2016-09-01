@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="accounts_div">
+	<div class="container">
+	    <div class="col-xs-6 col-xs-offset-6" id="login_div">
+				<h3>登录</h3>
+
+	        <form action="{% url 'login' %}" method="post" accept-charset="utf-8">{% csrf_token %}
+	          {% if form.errors %}
+	            <p class="small danger">
+	              * 아이디와 비밀번호가 정확하지 않습니다. 다시 시도해주세요.
+	            </p>
+	          {% endif %}
+	          <br/>
+	          <div class="form-group">
+				    <div class="input-group">
+					      <div class="input-group-addon login_addon"><i class="fa fa-user" id="login_user_icon" aria-hidden="true"></i></div>
+					      <input id="id_username" class="form-control" maxlength="254" name="username" type="text" placeholder="邮箱">
+				    </div>
+	          </div>
+	          <br/>
+	          <div class="form-group">
+				    <div class="input-group">
+			          <div class="input-group-addon login_addon"><i class="fa fa-lock" id="login_pw_icon" aria-hidden="true"></i></div>
+			          <input id="id_password" class="form-control" name="password" type="password" placeholder="密码">
+				    </div>
+
+	          </div>
+	          <br/>
+	          <button type="submit" class="text-center btn btn-lg" id="login_submit">
+	            登录
+	          </button>
+	          <br/><br/>
+	          <div>
+				  <div class="checkbox pull-left" id="login_checkbox_left">
+				    <label>
+				      <input type="checkbox">自动登录
+				    </label>
+				  </div>
+				  <div class="pull-right" id="login_checkbox_right">
+				  	忘记邮箱/密码
+				  </div>
+	          </div>
+
+	          <div class="clearfix"></div>
+
+	        </form>
+	        <br/>
+          <a class="pull-right" id="signup_btn" href="{% url 'signup' %}"><span class="mint" id="signup_btn_i"><i class="fa fa-angle-right" aria-hidden="true"></i></span> 免费注册</a>
+	    </div>
+	</div>
+</div>
+{% endblock %}
+

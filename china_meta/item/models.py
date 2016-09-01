@@ -32,7 +32,7 @@ class Item(models.Model):
 class ItemLink(models.Model):
 	item = models.ForeignKey(Item,blank=True, null=True)
 	source_name = models.CharField(max_length=100)
-	source_url = models.CharField(max_length=100)
+	source_url = models.CharField(max_length=256)
 	price = models.FloatField(default=0)
 	delivery = models.CharField(max_length=100)
 	additional_benefit = models.CharField(max_length=100)

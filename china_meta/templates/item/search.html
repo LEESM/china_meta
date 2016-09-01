@@ -7,7 +7,7 @@
 
   <div class="row">
     {% for item in items %}
-    <a href="{% url 'detail' %}?title={{item.title}}">
+    <a href="{% url 'detail' %}?id={{item.pk}}">
       <div class="col-xs-3 main_item_div">
 
         <div class="main_item_img_div">

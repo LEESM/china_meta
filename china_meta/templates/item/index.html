@@ -30,7 +30,7 @@
 
 	<div class="row">
 		{% for item in items1 %}
-    	<a href="{% url 'detail' %}?title={{item.title}}">
+    	<a href="{% url 'detail' %}?id={{item.pk}}">
 			<div class="col-xs-3 main_item_div">
 				<div class="main_item_img_div">
 					<img class="img-responsive" src="/item_images/{{ item.image }}">
@@ -59,7 +59,7 @@
 
 	<div class="row">
 		{% for item in items2 %}
-    	<a href="{% url 'detail' %}?title={{item.title}}">
+    	<a href="{% url 'detail' %}?id={{item.pk}}">
 			<div class="col-xs-3 main_item_div">
 				<div class="main_item_img_div">
 					<img class="img-responsive" src="/item_images/{{ item.image }}">
