@@ -36,8 +36,13 @@
         </div>
         <div class="pull-right">
           <ul class="gnb_ul">
+            {% if request.user.is_authenticated %}
+            <li class="gnb_li"><a href="{% url 'logout' %}" class="gnb_a">退出</a></li>
+            <li class="gnb_li"><a href="{% url 'mypage' %}" class="gnb_a">个人中心</a></li>
+            {% else %}
             <li class="gnb_li"><a href="{% url 'login' %}" class="gnb_a">登录</a></li>
-            <li class="gnb_li"><a class="gnb_a">注册会员</a></li>
+            <li class="gnb_li"><a href="{% url 'signup' %}" class="gnb_a">注册会员</a></li>
+            {% endif %}
             <li class="gnb_li"><a class="gnb_a"><span class="glyphicon glyphicon-shopping-cart" id="span_cart" aria-hidden="true"></span>&nbsp;购物车</a></li>
             <li class="gnb_li"><a class="gnb_a">客服中心</a></li>
             <li class="gnb_li"><a class="gnb_a">网站导航</a></li>
@@ -68,19 +73,31 @@
                 <div data-p="112.50" style="display: none;">
                   &nbsp;
                   <div class="ranking">1</div>
-                  <div class="ranking_content">韩国化妆品</div>
+                  <a href="/search/?q=韩国化妆品"><div class="ranking_content">韩国化妆品</div></a>
                   <div class="ranking_down"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></div>
                 </div>
                 <div data-p="112.50" style="display: none;">
                   &nbsp;
                   <div class="ranking">2</div>
-                  <div class="ranking_content">韩国化妆品</div>
+                  <a href="/search/?q=雪花秀"><div class="ranking_content">雪花秀</div></a>
                   <div class="ranking_down"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></div>
                 </div>
                 <div data-p="112.50" style="display: none;">
                   &nbsp;
                   <div class="ranking">3</div>
-                  <div class="ranking_content">韩国化妆品</div>
+                  <a href="/search/?q=Gentle Monster"><div class="ranking_content">Gentle Monster</div></a>
+                  <div class="ranking_down"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  &nbsp;
+                  <div class="ranking">4</div>
+                  <a href="/search/?q=mcm"><div class="ranking_content">MCM</div></a>
+                  <div class="ranking_down"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  &nbsp;
+                  <div class="ranking">5</div>
+                  <a href="/search/?q=兰芝"><div class="ranking_content">兰芝</div></a>
                   <div class="ranking_down"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></div>
                 </div>
             </div>
@@ -157,9 +174,7 @@
 
     <div id="footer">
       <div class="container">
-        <h3>회사로고</h3>
-        <p>전화 : 1111-2222</p>
-        <p>주소 : 서울 강남구 방배로 110, 5층</p>
+        <p><span id="footer_logo">狂上公司</span> &nbsp;&nbsp;&nbsp;&nbsp; +82 1522 1060  &nbsp;&nbsp;&nbsp;&nbsp;   韩国 首尔 江南区 方背路 110, 5楼 &nbsp;&nbsp;&nbsp;&nbsp; © 2015 - 2016 Madup Inc.</p>
       </div>
     </div>
 

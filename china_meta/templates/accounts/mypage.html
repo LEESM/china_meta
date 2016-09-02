@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+	<div class="row" id="mypage_div_1">
+		<div class="col-xs-2" id="mypage_div_1_left">
+			<i class="fa fa-user fa-10x" aria-hidden="true" id="mypage_user_icon"></i>
+		</div>
+		<div class="col-xs-10" id="mypage_div_1_right">
+			<div id="mypage_div_1_right_1">
+				<h2>admin@gmail.com</h2>
+				<h4>会员等级 <div class="mint_box">1</div></h4>
+			</div>
+			<div id="mypage_div_1_right_2">
+				<img src="{% static 'img/point.png' %}"/>
+				<p>积分<span id="point_num">1200</span></p>
+			</div>
+			<div id="mypage_div_1_right_3">
+				<img src="{% static 'img/coupon.png' %}"/><br/>
+				<div style="padding-top:3px; display:inline-block;">优惠券</div><div class="mint_box">2</div>
+			</div>
+		</div>
+	</div>
+	<hr/>
+	<div class="row">
+		<div class="col-xs-2" id="mypage_div_2_left">
+			<div id="mypage_div_2_left_inner">
+				<ul>
+					<li><a href="">订单中心</a></li>
+					<li><a href="">我的订单</a></li>
+					<li><a href="">团购订单</a></li>
+					<li><a href="">本地生活订单</a></li>
+					<li><a href="">我的预售</a></li>
+					<li><a href="">评价晒单</a></li>
+					<li><a href="">取消订单记录</a></li>
+					<li><a href="">关注中心</a></li>
+					<li><a href="">关注的商品</a></li>
+					<li><a href="">关注的店铺</a></li>
+					<li><a href="">关注的专辑</a></li>
+					<li><a href="">关注的品牌</a></li>
+					<li><a href="">关注的活动</a></li>
+					<li><a href="">浏览历史</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-xs-10" id="mypage_div_2_right">
+			<div id="mypage_div_2_right_1">
+				<h2>我买了什么</h2>
+				<table class="table mypage_table">
+					<thead>
+						<tr>
+							<th class="th1">日子</th>
+							<th class="th2">商品信息</th>
+							<th class="th3">价格</th>
+							<th class="th4">配送</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-center lh84">2016-09-01</td>
+							<td>
+								<div class="mypage_item_img"><img src="{% static 'img/mp1.jpg' %}" class="mypage_thumbnail"></div>
+								<div class="mypage_item_text">Galleria DFS<br/>Cloud9九朵云马油面霜膏70G淡化疤痕痘印 香港直邮正品<br/>1件 / RK431882448CN</div>
+							</td>
+							<td class="text-center lh84">¥72.00</td>
+							<td class="text-center lh84">配送中</td>
+						</tr>
+						<tr>
+							<td class="text-center lh84">2016-09-01</td>
+							<td>
+								<div class="mypage_item_img"><img src="{% static 'img/mp2.jpg' %}" class="mypage_thumbnail"></div>
+								<div class="mypage_item_text">SHILLA DFS<br/>MCM 2016新款时尚铆钉印图个性双肩包MMK-5AVE79<br/>1件 / RK431345D48CN</div>
+							</td>
+							<td class="text-center lh84">¥5310.00</td>
+							<td class="text-center lh84">配送结束</td>
+						</tr>
+						<tr>
+							<td class="text-center lh84">2016-09-01</td>
+							<td>
+								<div class="mypage_item_img"><img src="{% static 'img/mp3.jpg' %}" class="mypage_thumbnail"></div>
+								<div class="mypage_item_text">11st<br/>gentlemonster 全智贤李钟硕金宇彬李敏镐同款太阳镜<br/>1件 / RK121882448CN</div>
+							</td>
+							<td class="text-center lh84">¥1450.00</td>
+							<td class="text-center lh84">配送结束</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<hr/>
+			<div id="mypage_div_2_right_2">
+				<h2>我的关注商品</h2>
+				<table class="table mypage_table">
+					<thead>
+						<tr>
+							<th class="th1">日子</th>
+							<th class="th2">商品信息</th>
+							<th class="th3">价格</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-center lh84">2016-09-01</td>
+							<td>
+								<div class="mypage_item_img"><img src="{% static 'img/mp1.jpg' %}" class="mypage_thumbnail"></div>
+								<div class="mypage_item_text">Galleria DFS<br/>Cloud9九朵云马油面霜膏70G淡化疤痕痘印 香港直邮正品<br/>1件</div>
+							</td>
+							<td class="text-center lh84">¥72.00</td>
+						</tr>
+						<tr>
+							<td class="text-center lh84">2016-09-01</td>
+							<td>
+								<div class="mypage_item_img"><img src="{% static 'img/mp2.jpg' %}" class="mypage_thumbnail"></div>
+								<div class="mypage_item_text">SHILLA DFS<br/>MCM 2016新款时尚铆钉印图个性双肩包MMK-5AVE79<br/>1件</div>
+							</td>
+							<td class="text-center lh84">¥5310.00</td>
+						</tr>
+						<tr>
+							<td class="text-center lh84">2016-09-01</td>
+							<td>
+								<div class="mypage_item_img"><img src="{% static 'img/mp3.jpg' %}" class="mypage_thumbnail"></div>
+								<div class="mypage_item_text">11st<br/>gentlemonster 全智贤李钟硕金宇彬李敏镐同款太阳镜<br/>1件</div>
+							</td>
+							<td class="text-center lh84">¥1450.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

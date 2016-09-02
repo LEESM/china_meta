@@ -35,4 +35,5 @@ def logout(request):
 
 @login_required
 def mypage(request):
-	return True
+	return render(request, "accounts/mypage.html", {
+	})
