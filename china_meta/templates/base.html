@@ -54,7 +54,11 @@
 
   <div id="nav">
     <div class="container">
-      <div class="col-xs-6 col-xs-offset-3" id="search_form_div">
+      <div class="col-xs-3">
+        <a href="/"><img id="brand_a" src="{% static 'img/logo.png' %}"></a>
+      </div>
+
+      <div class="col-xs-6" id="search_form_div">
       <form class="form-inline" id="search_form" method="GET" action="{% url 'search' %}">
         <div class="form-group" id="search_form_form_group">
           <div class="input-group" id="search_form_input_group">
@@ -167,14 +171,11 @@
         });
     </script>
 
- 
-
-
     {% block content %}{% endblock %}
 
     <div id="footer">
       <div class="container">
-        <p><span id="footer_logo">狂上公司</span> &nbsp;&nbsp;&nbsp;&nbsp; +82 1522 1060  &nbsp;&nbsp;&nbsp;&nbsp;   韩国 首尔 江南区 方背路 110, 5楼 &nbsp;&nbsp;&nbsp;&nbsp; © 2015 - 2016 Madup Inc.</p>
+        <p><img src="{% static 'img/company_logo.png' %}">&nbsp;&nbsp;&nbsp;&nbsp; +82 1522 1060  &nbsp;&nbsp;&nbsp;&nbsp;   韩国 首尔 瑞草区 方背路 110, 5楼 &nbsp;&nbsp;&nbsp;&nbsp; © 2015 - 2016 &nbsp;&nbsp;&nbsp;&nbsp; Xingguan Corp.</p>
       </div>
     </div>
 
